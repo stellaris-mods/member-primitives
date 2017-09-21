@@ -1,0 +1,352 @@
+namespace = frp_rewards
+
+# =====================================
+# REWARDS
+#
+# We deliberately scope to every owned pop instead of setting a country modifier,
+# because newly grown pops will obviously NOT member primitives! Maybe some posers
+# will claim they do, but we do not listen to them. And their happiness would be FAKE
+@duration = 180 # 6 months
+
+# POP REWARDS
+
+country_event = {
+	id = frp_rewards.100
+	title = "FOLK_REWARD_TITLE"
+	desc = frp_rewards.100.desc
+	picture = "GFX_evt_folkprimitives_weremember"
+	show_sound = "event_member"
+	is_triggered_only = yes
+	option = {
+		name = frp_rewards.yes.button
+		custom_tooltip = frp_rewards.yes.desc
+		hidden_effect = {
+			every_owned_pop = {
+				add_modifier = {
+					modifier = "fp_happiness"
+					days = @duration
+				}
+			}
+		}
+	}
+	option = {
+		name = frp_rewards.no.button
+		custom_tooltip = frp_rewards.no.desc
+	}
+	option = {
+		name = frp_rewards.never.button
+		custom_tooltip = frp_rewards.never.desc
+		hidden_effect = { set_country_flag = "frp_never_any_reward" }
+	}
+}
+
+
+country_event = {
+	id = frp_rewards.102
+	title = "FOLK_REWARD_TITLE"
+	desc = frp_rewards.102.desc
+	picture = "GFX_evt_folkprimitives_weremember"
+	show_sound = "event_member"
+	is_triggered_only = yes
+	option = {
+		name = frp_rewards.yes.button
+		custom_tooltip = frp_rewards.yes.desc
+		hidden_effect = {
+			every_owned_pop = {
+				add_modifier = {
+					modifier = "fp_food"
+					days = @duration
+				}
+			}
+		}
+	}
+	option = {
+		name = frp_rewards.no.button
+		custom_tooltip = frp_rewards.no.desc
+	}
+	option = {
+		name = frp_rewards.never.button
+		custom_tooltip = frp_rewards.never.desc
+		hidden_effect = { set_country_flag = "frp_never_any_reward" }
+	}
+}
+
+country_event = {
+	id = frp_rewards.103
+	title = "FOLK_REWARD_TITLE"
+	desc = frp_rewards.103.desc
+	picture = "GFX_evt_folkprimitives_weremember"
+	show_sound = "event_member"
+	is_triggered_only = yes
+	option = {
+		name = frp_rewards.yes.button
+		custom_tooltip = frp_rewards.yes.desc
+		hidden_effect = {
+			every_owned_pop = {
+				add_modifier = {
+					modifier = "fp_growth"
+					days = @duration
+				}
+			}
+		}
+	}
+	option = {
+		name = frp_rewards.no.button
+		custom_tooltip = frp_rewards.no.desc
+	}
+	option = {
+		name = frp_rewards.never.button
+		custom_tooltip = frp_rewards.never.desc
+		hidden_effect = { set_country_flag = "frp_never_any_reward" }
+	}
+}
+
+# COUNTRY REWARDS
+
+country_event = {
+	id = frp_rewards.200
+	title = "FOLK_REWARD_TITLE"
+	desc = frp_rewards.200.desc
+	picture = "GFX_evt_folkprimitives_weremember"
+	show_sound = "event_member"
+	is_triggered_only = yes
+	option = {
+		name = frp_rewards.yes.button
+		custom_tooltip = frp_rewards.yes.desc
+		hidden_effect = {
+			add_modifier = {
+				modifier = "fp_shipupkeep"
+				days = @duration
+			}
+		}
+	}
+	option = {
+		name = frp_rewards.no.button
+		custom_tooltip = frp_rewards.no.desc
+	}
+	option = {
+		name = frp_rewards.never.button
+		custom_tooltip = frp_rewards.never.desc
+		hidden_effect = { set_country_flag = "frp_never_any_reward" }
+	}
+}
+
+country_event = {
+	id = frp_rewards.201
+	title = "FOLK_REWARD_TITLE"
+	desc = frp_rewards.201.desc
+	picture = "GFX_evt_folkprimitives_weremember"
+	show_sound = "event_member"
+	is_triggered_only = yes
+	option = {
+		name = frp_rewards.yes.button
+		custom_tooltip = frp_rewards.yes.desc
+		hidden_effect = {
+			add_modifier = {
+				modifier = "fp_creatures"
+				days = @duration
+			}
+		}
+	}
+	option = {
+		name = frp_rewards.no.button
+		custom_tooltip = frp_rewards.no.desc
+	}
+	option = {
+		name = frp_rewards.never.button
+		custom_tooltip = frp_rewards.never.desc
+		hidden_effect = { set_country_flag = "frp_never_any_reward" }
+	}
+}
+
+country_event = {
+	id = frp_rewards.202
+	title = "FOLK_REWARD_TITLE"
+	desc = frp_rewards.202.desc
+	picture = "GFX_evt_folkprimitives_weremember"
+	show_sound = "event_member"
+	is_triggered_only = yes
+	option = {
+		name = frp_rewards.yes.button
+		custom_tooltip = frp_rewards.yes.desc
+		hidden_effect = {
+			add_modifier = {
+				modifier = "fp_scientist"
+				days = @duration
+			}
+		}
+	}
+	option = {
+		name = frp_rewards.no.button
+		custom_tooltip = frp_rewards.no.desc
+	}
+	option = {
+		name = frp_rewards.never.button
+		custom_tooltip = frp_rewards.never.desc
+		hidden_effect = { set_country_flag = "frp_never_any_reward" }
+	}
+}
+
+# SHIP
+
+country_event = {
+	id = frp_rewards.300
+	title = "FOLK_REWARD_TITLE"
+	desc = frp_rewards.300.desc
+	picture = "GFX_evt_folkprimitives_weremember"
+	show_sound = "event_member"
+	is_triggered_only = yes
+	option = {
+		name = frp_rewards.yes.button
+		custom_tooltip = frp_rewards.yes.desc
+		hidden_effect = {
+			every_owned_ship = {
+				limit = {
+					is_ship_class = shipclass_science_ship
+				}
+				add_modifier = {
+					modifier = "fp_survey"
+					days = @duration
+				}
+			}
+		}
+	}
+	option = {
+		name = frp_rewards.no.button
+		custom_tooltip = frp_rewards.no.desc
+	}
+	option = {
+		name = frp_rewards.never.button
+		custom_tooltip = frp_rewards.never.desc
+		hidden_effect = { set_country_flag = "frp_never_any_reward" }
+	}
+}
+
+country_event = {
+	id = frp_rewards.301
+	title = "FOLK_REWARD_TITLE"
+	desc = frp_rewards.301.desc
+	picture = "GFX_evt_folkprimitives_weremember"
+	show_sound = "event_member"
+	is_triggered_only = yes
+	option = {
+		name = frp_rewards.yes.button
+		custom_tooltip = frp_rewards.yes.desc
+		hidden_effect = {
+			every_owned_ship = {
+				limit = {
+					is_ship_class = shipclass_science_ship
+				}
+				add_modifier = {
+					modifier = "fp_anomaly"
+					days = @duration
+				}
+			}
+		}
+	}
+	option = {
+		name = frp_rewards.no.button
+		custom_tooltip = frp_rewards.no.desc
+	}
+	option = {
+		name = frp_rewards.never.button
+		custom_tooltip = frp_rewards.never.desc
+		hidden_effect = { set_country_flag = "frp_never_any_reward" }
+	}
+}
+
+country_event = {
+	id = frp_rewards.302
+	title = "FOLK_REWARD_TITLE"
+	desc = frp_rewards.302.desc
+	picture = "GFX_evt_folkprimitives_weremember"
+	show_sound = "event_member"
+	is_triggered_only = yes
+	option = {
+		name = frp_rewards.yes.button
+		custom_tooltip = frp_rewards.yes.desc
+		hidden_effect = {
+			every_owned_ship = {
+				limit = {
+					is_ship_class = shipclass_military
+				}
+				add_modifier = {
+					modifier = "fp_evasion"
+					days = @duration
+				}
+			}
+		}
+	}
+	option = {
+		name = frp_rewards.no.button
+		custom_tooltip = frp_rewards.no.desc
+	}
+	option = {
+		name = frp_rewards.never.button
+		custom_tooltip = frp_rewards.never.desc
+		hidden_effect = { set_country_flag = "frp_never_any_reward" }
+	}
+}
+
+# Root reward trigger
+planet_event = {
+	id = frp_rewards.1000
+	is_triggered_only = yes
+	hide_window = yes
+	trigger = {
+		exists = solar_system
+		exists = owner
+		exists = root
+		owner = {
+			is_country_type = "primitive"
+		}
+	}
+	immediate = {
+		owner = {
+			set_country_flag = "folk_primitives_researched"
+		}
+		every_country = {
+			limit = {
+				is_country_type = "default"
+				is_ai = no
+			}
+			#fp_cancel_all_types = yes
+			fp_decreasecount = yes
+
+			# if = {
+			# 	limit = { NOT = { fp_hasanyproject = yes } }
+			# 	end_event_chain = "folkprimitives_chain"
+			# }
+			if = {
+				limit = {
+					has_relation_flag = {
+						who = root.owner
+						flag = has_frp_project_v1
+					}
+				}
+				remove_relation_flag = {
+					who = root.owner
+					flag = has_frp_project_v1
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = "frp_never_any_reward"
+						}
+					}
+					random_list = {
+						10 = { country_event = { id = frp_rewards.300 } }
+						10 = { country_event = { id = frp_rewards.301 } }
+						10 = { country_event = { id = frp_rewards.302 } }
+						10 = { country_event = { id = frp_rewards.200 } }
+						10 = { country_event = { id = frp_rewards.201 } }
+						10 = { country_event = { id = frp_rewards.202 } }
+						10 = { country_event = { id = frp_rewards.100 } }
+						10 = { country_event = { id = frp_rewards.102 } }
+						10 = { country_event = { id = frp_rewards.103 } }
+					}
+				}
+			}
+		}
+	}
+}

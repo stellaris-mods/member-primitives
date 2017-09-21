@@ -1,0 +1,67 @@
+
+# Multiplied by the distance from the Capital solar system
+# Distance 650 is about edge-to-edge in a 600 system map
+# 1.0 is 100% chance (checked every 10 years, and when a new Pop appears)
+
+# yes, the 25 event works
+#country_event = {
+#	id = folk_primitives.25
+#	title = "contact"
+#	picture = GFX_evt_mining_station
+#	desc = "apparently we made contact with a new primitive civ"
+#	show_sound = tut_new_first_contact_intro #bla bla fucking bla
+#
+#	is_triggered_only = yes
+#	trigger = {
+#		is_country_type = default
+#		is_ai = no
+#		from = {
+#			is_country_type = primitive
+#		}
+#	}
+
+#	immediate = {
+#		begin_event_chain = {
+#			event_chain = "tutorial_23_chain"
+#			target = ROOT
+#		}
+#	}
+
+#	option = {
+#		name = "contact!"
+#	}
+#}
+
+#ship_event = {
+#	id = folk_primitives.1000
+#	is_triggered_only = yes
+#	title = "holy smokes"
+#	desc = "wasdf"
+#	picture = GFX_evt_mining_station
+#	location = from
+
+#	trigger = {
+#		owner = { # Check that the surveyor is a player
+#			is_country_type = default
+#			is_ai = no
+#		}
+#		from = {
+#			has_owner = yes
+#			owner = { is_country_type = primitive }
+#			has_observation_outpost = no
+#
+#			# PARADOX U GIEF?!
+#			# pls anything that works
+#			#has_deposit_for = "shipclass_observation_station"
+#			#can_build_station = "observation_station"
+#			#can_build_station = "shipclass_observation_station"
+#			#can_build_observation_outpost = yes
+#			#can_build_observation_station = yes
+#			#can_observe = yes
+#		}
+#	}
+#
+#	option = {
+#		name = "omg really?"
+#	}
+#}

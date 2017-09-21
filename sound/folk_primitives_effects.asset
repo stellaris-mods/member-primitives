@@ -1,0 +1,9 @@
+soundeffect = {
+	name = event_member
+	sounds = {
+		sound = event_member
+	} 
+	volume = 0.8
+	max_audible = 1
+	max_audible_behaviour = fail	
+}

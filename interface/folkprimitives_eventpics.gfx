@@ -1,0 +1,68 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_evt_folkprimitives_base"
+		texturefile = "gfx/event_pictures/member_primitives.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_folkprimitives_weremember"
+		texturefile = "gfx/event_pictures/folk_weremember.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_folkprimitives_bronze"
+		texturefile = "gfx/event_pictures/folk_bronze.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_folkprimitives_iron"
+		texturefile = "gfx/event_pictures/folk_iron.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_folkprimitives_medieval"
+		texturefile = "gfx/event_pictures/folk_medieval.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_folkprimitives_renaissance"
+		texturefile = "gfx/event_pictures/folk_renaissance.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_folkprimitives_steam"
+		texturefile = "gfx/event_pictures/folk_steam.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_folkprimitives_industrial"
+		texturefile = "gfx/event_pictures/folk_industrial.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_folkprimitives_machine"
+		texturefile = "gfx/event_pictures/folk_machine.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_folkprimitives_atomic"
+		texturefile = "gfx/event_pictures/folk_machine.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_evt_folkprimitives_earlyspace"
+		texturefile = "gfx/event_pictures/folk_earlyspace.dds"
+		masking_texture = "gfx/interface/situation_log/event_mask.dds"
+		alwaystransparent = yes
+	}
+}

@@ -1,0 +1,48 @@
+# A ship has surveyed a planet.
+# Scope = Ship
+# From = Planet
+on_survey = {
+	events = {
+		fp_survey.1 # Start Project
+	}
+}
+
+# Triggers when the game starts
+# This does not trigger when you load a game, for example.
+# Only at day 1 of year 0.
+# on_game_start = {
+# 	events = {
+# 		fp_registry.900
+# 	}
+# }
+
+
+# XXX The following two might be redundant
+# perhaps we only need the latter
+
+# Remove civs destroyed by ED
+# on_daily_bombardment = {
+# 	events = {
+# 		fp_registry.100
+# 	}
+# }
+
+on_planet_ownerless = {
+	events = {
+		fp_registry.200
+	}
+}
+
+on_country_destroyed = {
+	events = {
+		fp_registry.300
+	}
+}
+
+# A colony has been destroyed. Called just before owner and controller is cleared
+# Scope = Planet
+on_colony_destroyed = {
+	events = {
+		fp_registry.400
+	}
+}

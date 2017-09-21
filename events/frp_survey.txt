@@ -1,0 +1,381 @@
+namespace = fp_survey
+
+# country_event = {
+# 	id = fp_survey.100
+# 	#title = "NSA Weekly Spy"
+# 	#desc = "You should never have seen this window. You will be terminated soon."
+# 	#picture = "GFX_evt_folkprimitives_base"
+# 	hide_window = yes
+
+# 	#option = { name = OK }
+
+# 	trigger = {
+# 		is_country_type = "default"
+# 		is_ai = no
+# 	}
+
+# 	mean_time_to_happen = {
+# 		days = 5
+# 	}
+
+# 	immediate = {
+# 		#fp_ensurecount = yes
+# 		if = {
+# 			limit = {
+# 				NOT = { fp_toomany = yes }
+# 			}
+# 			every_country = {
+# 				limit = {
+# 					is_country_type = "primitive"
+# 					NOT = {
+# 						has_country_flag = "folk_primitives_researched"
+# 						has_country_flag = "folk_primitives_project"
+# 					}
+# 					exists = home_planet
+# 					home_planet = {
+# 						is_surveyed = {
+# 							who = root
+# 							status = yes
+# 						}
+# 					}
+# 				}
+# 				set_country_flag = "frp_temp_flag"
+# 			}
+
+# 			while = {
+# 				limit = {
+# 					NOT = { fp_toomany = yes }
+# 					any_country = {
+# 						has_country_flag = "frp_temp_flag"
+# 						home_planet = { is_inside_border = root }
+# 					}
+# 				}
+# 				random_country = {
+# 					limit = {
+# 						has_country_flag = "frp_temp_flag"
+# 						home_planet = { is_inside_border = root }
+# 					}
+# 					remove_country_flag = "frp_temp_flag"
+# 					capital_scope = {
+# 						prevprev = {
+# 							fp_cancel_all_types = yes
+# 						}
+# 					}
+# 					fp_createproject = yes
+# 				}
+# 			}
+
+# 			while = {
+# 				limit = {
+# 					NOT = { fp_toomany = yes }
+# 					any_country = {
+# 						has_country_flag = "frp_temp_flag"
+# 					}
+# 				}
+# 				random_country = {
+# 					limit = {
+# 						has_country_flag = "frp_temp_flag"
+# 					}
+# 					remove_country_flag = "frp_temp_flag"
+# 					capital_scope = {
+# 						prevprev = {
+# 							fp_cancel_all_types = yes
+# 						}
+# 					}
+# 					fp_createproject = yes
+# 				}
+# 			}
+
+# 			every_country = {
+# 				limit = { has_country_flag = "frp_temp_flag" }
+# 				remove_country_flag = "frp_temp_flag"
+# 			}
+# 		}
+# 	}
+# }
+
+
+# We surveyed a planet
+ship_event = {
+	id = fp_survey.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	# Does it have primitives on it?
+	trigger = {
+		owner = { # Check that the surveyor is a player
+			is_country_type = "default"
+			is_ai = no
+		}
+		from = {
+			has_owner = yes
+			owner = { is_country_type = "primitive" }
+			#has_observation_outpost = no
+		}
+	}
+
+	immediate = {
+		from = {
+			owner = {
+				# Used in the special project text
+				# Could probably just scope it properly in the text but I redesign the code so often :-P
+				save_event_target_as = "primitive_civ"
+				if = {
+					limit = {
+						NOT = { has_country_flag = "humans_late_medieval_age" }
+					}
+					switch = {
+						trigger = has_country_flag
+						bronze_age = {
+							root.owner = { country_event = { id = fp_survey.2 } }
+							break = yes
+						}
+						iron_age = {
+							root.owner = { country_event = { id = fp_survey.3 } }
+							break = yes
+						}
+						late_medieval_age = {
+							root.owner = { country_event = { id = fp_survey.4 } }
+							break = yes
+						}
+						renaissance_age = {
+							root.owner = { country_event = { id = fp_survey.5 } }
+							break = yes
+						}
+						steam_age = {
+							root.owner = { country_event = { id = fp_survey.6 } }
+							break = yes
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = {
+							has_country_flag = humans_machine_age
+							has_country_flag = humans_early_space_age
+						}
+					}
+					switch = {
+						trigger = has_country_flag
+						industrial_age = {
+							root.owner = { country_event = { id = fp_survey.7 } }
+							break = yes
+						}
+						machine_age = {
+							root.owner = { country_event = { id = fp_survey.8 } }
+							break = yes
+						}
+						atomic_age = {
+							root.owner = { country_event = { id = fp_survey.9 } }
+							break = yes
+						}
+						early_space_age = {
+							root.owner = { country_event = { id = fp_survey.10 } }
+							break = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# planet scope can scope to observation_outpost[_owner]
+
+country_event = {
+	id = fp_survey.2 # Bronze
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		#fp_ensurecount = yes
+		# if = {
+		# 	limit = { fp_toomany = yes }
+		# 		fp_showtoomany = yes
+		# 	else = {
+				fp_setprojectflags = yes
+				#fp_startchain = yes
+				enable_special_project = {
+					name = primitives_observe_bronze_age_2
+					location = fromfrom
+					owner = root
+				}
+		# 	}
+		# }
+	}
+}
+
+country_event = {
+	id = fp_survey.3 # Iron Age
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		#fp_ensurecount = yes
+		# if = {
+		# 	limit = { fp_toomany = yes }
+		# 		fp_showtoomany = yes
+		# 	else = {
+				fp_setprojectflags = yes
+				#fp_startchain = yes
+				enable_special_project = {
+					name = primitives_observe_iron_age_2
+					location = fromfrom
+					owner = root
+				}
+		# 	}
+		# }
+	}
+}
+
+country_event = {
+	id = fp_survey.4 # Late Medieval Age
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		#fp_ensurecount = yes
+		# if = {
+		# 	limit = { fp_toomany = yes }
+		# 		fp_showtoomany = yes
+		# 	else = {
+				fp_setprojectflags = yes
+				#fp_startchain = yes
+				enable_special_project = {
+					name = primitives_observe_late_medieval_age_2
+					location = fromfrom
+					owner = root
+				}
+		# 	}
+		# }
+	}
+}
+
+country_event = {
+	id = fp_survey.5 # Renaissance Age
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		#fp_ensurecount = yes
+		# if = {
+		# 	limit = { fp_toomany = yes }
+		# 		fp_showtoomany = yes
+		# 	else = {
+				fp_setprojectflags = yes
+				#fp_startchain = yes
+				enable_special_project = {
+					name = primitives_observe_renaissance_age_2
+					location = fromfrom
+					owner = root
+				}
+		# 	}
+		# }
+	}
+}
+
+country_event = {
+	id = fp_survey.6 # Steam Age
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		#fp_ensurecount = yes
+		# if = {
+		# 	limit = { fp_toomany = yes }
+		# 		fp_showtoomany = yes
+		# 	else = {
+				fp_setprojectflags = yes
+				#fp_startchain = yes
+				enable_special_project = {
+					name = primitives_observe_steam_age_2
+					location = fromfrom
+					owner = root
+				}
+		# 	}
+		# }
+	}
+}
+
+country_event = {
+	id = fp_survey.7 # Industrial Age
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		#fp_ensurecount = yes
+		# if = {
+		# 	limit = { fp_toomany = yes }
+		# 		fp_showtoomany = yes
+		# 	else = {
+				fp_setprojectflags = yes
+				#fp_startchain = yes
+				enable_special_project = {
+					name = primitives_observe_industrial_age_2
+					location = fromfrom
+					owner = root
+				}
+		# 	}
+		# }
+	}
+}
+
+country_event = {
+	id = fp_survey.8 # Machine Age
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		#fp_ensurecount = yes
+		# if = {
+		# 	limit = { fp_toomany = yes }
+		# 		fp_showtoomany = yes
+		# 	else = {
+				fp_setprojectflags = yes
+				#fp_startchain = yes
+				enable_special_project = {
+					name = primitives_observe_machine_age_2
+					location = fromfrom
+					owner = root
+				}
+		# 	}
+		# }
+	}
+}
+
+country_event = {
+	id = fp_survey.9 # Atomic Age
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		#fp_ensurecount = yes
+		# if = {
+		# 	limit = { fp_toomany = yes }
+		# 		fp_showtoomany = yes
+		# 	else = {
+				fp_setprojectflags = yes
+				#fp_startchain = yes
+				enable_special_project = {
+					name = primitives_observe_atomic_age_2
+					location = fromfrom
+					owner = root
+				}
+		# 	}
+		# }
+	}
+}
+
+country_event = {
+	id = fp_survey.10 # Early Space Age
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		#fp_ensurecount = yes
+		# if = {
+		# 	limit = { fp_toomany = yes }
+		# 		fp_showtoomany = yes
+		# 	else = {
+				fp_setprojectflags = yes
+				#fp_startchain = yes
+				enable_special_project = {
+					name = primitives_observe_early_space_age_2
+					location = fromfrom
+					owner = root
+				}
+		# 	}
+		# }
+	}
+}

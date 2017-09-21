@@ -1,0 +1,44 @@
+#all_technology_research_speed = 0.02
+
+# APPLIED ON POPS
+fp_happiness = {
+	pop_happiness = 0.05
+}
+
+fp_food = {
+	pop_food_req_mult = -0.05
+}
+
+fp_growth = {
+	pop_growth_speed = 0.05
+}
+
+# EMPIRE (COUNTRY)
+
+fp_shipupkeep = {
+	ship_upkeep_mult = -0.05
+}
+
+fp_creatures = {
+	damage_vs_country_type_amoeba_mult = 0.05
+	damage_vs_country_type_crystal_mult = 0.05
+	damage_vs_country_type_drone_mult = 0.05
+}
+
+fp_scientist = {
+	tile_resource_society_research_mult = 0.02
+}
+
+# SHIP
+fp_survey = {
+	ship_speed_mult = 0.05
+	science_ship_survey_speed  = 0.05
+}
+
+fp_anomaly = {
+	ship_anomaly_fail_risk = -0.05
+}
+
+fp_evasion = {
+	ship_evasion_mult = 0.02
+}

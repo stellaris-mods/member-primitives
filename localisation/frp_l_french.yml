@@ -1,0 +1,129 @@
+﻿l_french:
+
+# ===============
+# Debug
+fptest.var: "[Root.FolkPrimitivesCount] projects exist"
+
+# ===============
+
+# FUCK OFF WITH THAT TEXT JEEZ
+# This will error in error.log
+SPECIAL_PROJECT_STATUS_AVAILABLE: ""
+
+folkprimitives_chain_title: "Member primitives?"
+folkprimitives_chain_desc: "§MThank you for using my mods!§!\n\nWhenever you research a project in the list, you get to pick between a random reward and no reward. AI empires do not get these projects at all.\n\nPlease consult the Steam workshop page for more information on the various rewards and other details. I §Wwelcome any feedback or questions§! regarding this, or any of my other mods. Thank you!\n\n§GMember primitives? Ooooh, I member!§!\n\n§PPlease be aware of a Stellaris bug where if you have more than 20+ projects under a category, it will break. The mod tries to prevent this.§!"
+
+primitives.toomany.title: "Too many active projects"
+primitives.toomany.desc: "Unfortunately, due to a §Pbug in Stellaris§!, it is impossible to create more than 20 projects under a category in the Situation Log without serious problems.\n\nWhich means that §Mno project has been created§! for the civilization you just discovered.\n\nAnd, unfortunately, because this situation is hopefully quite rare, you will get this warning popup any time you have 20 Member-projects §Gactive§! in the Situation Log and discover a new primitive civilization.\n\nIf this is very inconvenient, please let me know on the Steam workshop page and I can spend the effort to work around this problem."
+primitives.toomany.button: "I don't hate you for this"
+
+primitives_reward: "\n "
+primitives_prefix: "Member the "
+primitives_postfix: "?"
+
+# ===============
+# 1.0
+primitives.obsolete: "§PThis project is from an earlier version of the addon, and will have no effect any more.§! It's the only way I could do it without the game crashing. The project will not give any rewards, but the Go To button should still work. New projects from this version will show up under their own category :-)"
+
+primitives_observe_bronze_age: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_bronze_age_DESC: "$primitives.obsolete$"
+primitives_observe_iron_age: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_iron_age_DESC: "$primitives.obsolete$"
+primitives_observe_late_medieval_age: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_late_medieval_age_DESC: "$primitives.obsolete$"
+primitives_observe_renaissance_age: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_renaissance_age_DESC: "$primitives.obsolete$"
+primitives_observe_steam_age: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_steam_age_DESC: "$primitives.obsolete$"
+
+primitives_observe_industrial_age: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_industrial_age_DESC: "$primitives.obsolete$"
+primitives_observe_machine_age: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_machine_age_DESC: "$primitives.obsolete$"
+primitives_observe_atomic_age: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_atomic_age_DESC: "$primitives.obsolete$"
+primitives_observe_early_space_age: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_early_space_age_DESC: "$primitives.obsolete$"
+
+# ===============
+# 2.0
+primitives_observe_bronze_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_bronze_age_2_DESC: "$action.5.desc_01$$primitives_reward$"
+primitives_observe_iron_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_iron_age_2_DESC: "$action.5.desc_02$$primitives_reward$"
+primitives_observe_late_medieval_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_late_medieval_age_2_DESC: "$action.5.desc_03$$primitives_reward$"
+primitives_observe_renaissance_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_renaissance_age_2_DESC: "$action.5.desc_04$$primitives_reward$"
+primitives_observe_steam_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_steam_age_2_DESC: "$action.5.desc_05$$primitives_reward$"
+
+primitives_observe_industrial_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_industrial_age_2_DESC: "$action.6.desc_01$$primitives_reward$"
+primitives_observe_machine_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_machine_age_2_DESC: "$action.6.desc_02$$primitives_reward$"
+primitives_observe_atomic_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_atomic_age_2_DESC: "$action.6.desc_03$$primitives_reward$"
+primitives_observe_early_space_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_early_space_age_2_DESC: "$action.6.desc_04$$primitives_reward$"
+
+# ===============
+# Rewards
+#
+
+FOLK_REWARD_TITLE: "We remember!"
+
+frp_rewards_duration: " for 6 months."
+fpmodprims: "Remembers Primitives"
+
+frp_rewards.yes.button: "We deserve a reward for this!"
+frp_rewards.yes.desc: "We member, so give give give!"
+
+# anomaly.121.a.tooltip: "§B6 £pops  Pops§! gain the §YXenophile§! Ethic."
+
+frp_rewards.no.button: "No reward, please."
+frp_rewards.no.desc: "We're not studying the primitives for the rewards, please don't give me anything. But we member!"
+
+frp_rewards.never.button: "§RNever give me anything§!"
+frp_rewards.never.desc: "Turns off rewards for the rest of the game."
+
+# POP MODIFIER 1: HAPPINESS
+frp_rewards.100.desc: "Our population has fond memories of the discovery.\n\n  §G+5% happiness$frp_rewards_duration$§!"
+fp_happiness: "$fpmodprims$"
+
+# POP: ETHICS
+frp_rewards.101.desc: "Our population is very inspired by the memories of the discovery.\n\n  §G-5% ethics divergence$frp_rewards_duration$§!"
+fp_ethics: "$fpmodprims$"
+
+# POP: FOOD
+frp_rewards.102.desc: "Our population can't think of anything else but the memories of this discovery. So much so that they forget to eat sometimes!\n\n  §G-5% food consumption$frp_rewards_duration$§!"
+fp_food: "$fpmodprims$"
+
+# POP: GROWTH
+frp_rewards.103.desc: "The vivid memories of the primitive civilization has inspired many people to go on datenights and blind dates that they normally would never attend!\n\n  §G+5% growth rate$frp_rewards_duration$§!"
+fp_growth: "$fpmodprims$"
+
+# COUNTRY: SHIP UPKEEP
+frp_rewards.200.desc: "Our janitorial staff onboard all our ships are talking about this primitive civilization all day, and it's actually improving their work ethics!\n\n  §G-5% ship upkeep cost$frp_rewards_duration$§!"
+fp_shipupkeep: "$fpmodprims$"
+
+# COUNTRY: CREATURE DMG
+frp_rewards.201.desc: "The stories circulating about this primitive civilization having been attacked by space monsters has really motivated our ships captains!\n\n  §G+5% damage vs amoebas, crystals, and drones$frp_rewards_duration$§!"
+fp_creatures: "$fpmodprims$"
+
+# COUNTRY: SCIENCE!
+frp_rewards.202.desc: "The portion of our population who manage the science laboratories around the galaxy have been inspired by our scientists discovery of this primitive civilization.\n\n  §G+2% Research Facility output$frp_rewards_duration$§!"
+fp_scientist: "$fpmodprims$"
+
+# SHIP: SURVEY
+frp_rewards.300.desc: "Science Vessels seem eager to find more primitive civilizations, and have added some secret juice to their ship engines!\n\n  §GScience Ships gain +5% speed and 5% survey speed$frp_rewards_duration$§!"
+fp_survey: "$fpmodprims$"
+
+# SHIP: ANOMALY
+frp_rewards.301.desc: "Our scientists feel like they should tread carefully for some time, in order not to disturb this primitive civilization.\n\n  §G-5% anomaly fail risk$frp_rewards_duration$§!"
+fp_anomaly: "$fpmodprims$"
+
+# SHIP: EVASION
+frp_rewards.302.desc: "All our combat pilots seem really hyped up by this primitive civilization! They're really jumpy, and drinking way too much coffee.\n\n  §G+2% evasion$frp_rewards_duration$§!"
+
+

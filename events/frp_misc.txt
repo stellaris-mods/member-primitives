@@ -1,0 +1,52 @@
+namespace = frp_misc
+
+# triggered from fp_showtoomany in scripted_effects
+# only shown once every 10 years
+country_event = {
+	id = frp_misc.1000 # 1000 is too many!
+	picture = "GFX_evt_folkprimitives_base"
+	title = "primitives.toomany.title"
+	desc = "primitives.toomany.desc"
+	is_triggered_only = yes
+
+	option = {
+		name = "primitives.toomany.button"
+	}
+}
+
+# Cancels all project types on this planet
+# planet_event = {
+# 	id = frp_misc.501
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	#trigger = {
+# 	#	exists = space_owner
+# 	#}
+# 	immediate = {
+# 		every_country = {
+# 			limit = {
+# 				is_country_type = "default"
+# 				is_ai = no
+# 			}
+# 			fp_cancel_all_types = yes
+# 		}
+# 	}
+# }
+
+# End the event chain, if we can.
+# planet_event = {
+# 	id = frp_misc.500
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	immediate = {
+# 		every_country = {
+# 			limit = {
+# 				is_country_type = "default"
+# 				is_ai = no
+# 				NOT = { fp_hasanyproject = yes }
+# 			}
+# 			end_event_chain = "folkprimitives_chain"
+# 		}
+# 	}
+# }
+

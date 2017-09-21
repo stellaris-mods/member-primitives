@@ -1,0 +1,292 @@
+
+# fp_showtoomany = {
+# 	if = {
+# 		limit = {
+# 			NOT = {
+# 				has_country_flag = "frp_ignore_too_many"
+# 			}
+# 		}
+# 		country_event = { id = "frp_misc.1000" }
+# 		set_timed_country_flag = {
+# 			flag = "frp_ignore_too_many"
+# 			days = 3600
+# 		}
+# 	}
+# }
+
+
+# Do this the first time we need to access the variable
+# Always in country scope of the player
+# fp_countprojects = {
+# 	set_variable = {
+# 		which = "temp_counter"
+# 		value = 0
+# 	}
+# 	every_country = {
+# 		limit = {
+# 			is_country_type = "primitive"
+# 		}
+# 		set_country_flag = "folk_not_counted"
+# 	}
+# 	while = {
+# 		limit = {
+# 			any_country {
+# 				has_country_flag = "folk_primitives_project"
+# 				has_country_flag = "folk_not_counted"
+# 			}
+# 		}
+# 		random_country = {
+# 			limit = {
+# 				has_country_flag = "folk_primitives_project"
+# 				has_country_flag = "folk_not_counted"
+# 			}
+# 			prev = {
+# 				change_variable = {
+# 					which = "temp_counter"
+# 					value = 1 # +1
+# 				}
+# 			}
+# 			# Make sure we dont loop forever
+# 			remove_country_flag = "folk_not_counted"
+# 			# And then we loop with while{}
+# 		}
+# 	}
+# 	# Not sure why I used a temp_counter variable. Probably for teh lulz.
+# 	set_variable = {
+# 		which = "FolkPrimitivesCount"
+# 		value = "temp_counter"
+# 	}
+# }
+
+# The problem is variables do not persist across save games
+# Wait, they do actually.
+
+# Hopefully country flags do! (they do)
+# Always country scope.
+# fp_ensurecount = {
+# 	if = {
+# 		limit = {
+# 			check_variable = {
+# 				which = "FolkPrimitivesCount"
+# 				value < 1
+# 			}
+# 		}
+# 		fp_countprojects = yes
+# 	}
+# }
+
+# fromfrom is the planet
+# from is the primitive civ
+# scope is the player country
+fp_setprojectflags = {
+	#fp_ensurecount = yes
+	# change_variable = {
+	# 	which = "FolkPrimitivesCount"
+	# 	value = 1 # +1
+	# }
+	set_relation_flag = {
+		who = fromfrom.owner
+		flag = has_frp_project_v1
+	}
+	fromfrom.owner = {
+		set_country_flag = "folk_primitives_project"
+	}
+}
+
+# root is the planet
+# scope is the player country
+# XXX we have a copy of this in fp_registry
+fp_decreasecount = {
+	#fp_ensurecount = yes
+	# Remove primitive flag
+	root.owner = {
+		remove_country_flag = "folk_primitives_project"
+	}
+	# subtract_variable = {
+	# 	which = "FolkPrimitivesCount"
+	# 	value = 1
+	# }
+}
+
+# fp_startchain = {
+# 	if = {
+# 		# Without this we get errors in error.log
+# 		limit = {
+# 			not = {
+# 				has_event_chain = "folkprimitives_chain"
+# 			}
+# 		}
+# 		begin_event_chain = {
+# 			event_chain = "folkprimitives_chain"
+# 			target = root
+# 		}
+# 	}
+# }
+
+# This needs to be done in country scope
+# And prev needs to be the planet, obviously
+fp_cancel_all_types = {
+	abort_special_project = {
+		type = primitives_observe_bronze_age_2
+		location = prev
+	}
+	abort_special_project = {
+		type = primitives_observe_iron_age_2
+		location = prev
+	}
+	abort_special_project = {
+		type = primitives_observe_late_medieval_age_2
+		location = prev
+	}
+	abort_special_project = {
+		type = primitives_observe_renaissance_age_2
+		location = prev
+	}
+	abort_special_project = {
+		type = primitives_observe_steam_age_2
+		location = prev
+	}
+	abort_special_project = {
+		type = primitives_observe_industrial_age_2
+		location = prev
+	}
+	abort_special_project = {
+		type = primitives_observe_machine_age_2
+		location = prev
+	}
+	abort_special_project = {
+		type = primitives_observe_atomic_age_2
+		location = prev
+	}
+	abort_special_project = {
+		type = primitives_observe_early_space_age_2
+		location = prev
+	}
+}
+
+
+# XXX Oh god, I cant be arsed to make this use the same code as in fp_survey.1
+# XXX Only use from fp_survey.100
+# XXX fp_ensurecount is already triggered
+# XXX Also, we check if there are too many projects before this one is called.
+
+# fp_fuckthis = {
+# 	set_country_flag = "folk_primitives_project"
+# 	# prev = {
+# 	# 	change_variable = {
+# 	# 		which = "FolkPrimitivesCount"
+# 	# 		value = 1 # +1
+# 	# 	}
+# 	# 	# if = {
+# 	# 	# 	# Without this we get errors in error.log
+# 	# 	# 	limit = {
+# 	# 	# 		not = {
+# 	# 	# 			has_event_chain = "folkprimitives_chain"
+# 	# 	# 		}
+# 	# 	# 	}
+# 	# 	# 	begin_event_chain = {
+# 	# 	# 		event_chain = "folkprimitives_chain"
+# 	# 	# 		target = root
+# 	# 	# 	}
+# 	# 	# }
+# 	# }
+# }
+
+# prev is player country
+# this is primitive civ
+# fp_createproject = {
+# 	# Used in the special project text
+# 	# Could probably just scope it properly in the text but I redesign the code so often :-P
+# 	save_event_target_as = "primitive_civ"
+# 	if = {
+# 		limit = {
+# 			NOT = { has_country_flag = "humans_late_medieval_age" }
+# 		}
+# 		switch = {
+# 			trigger = has_country_flag
+# 			bronze_age = {
+# 				fp_fuckthis = yes
+# 				enable_special_project = {
+# 					name = primitives_observe_bronze_age_2
+# 					location = capital_scope
+# 					owner = root
+# 				}
+# 			}
+# 			iron_age = {
+# 				fp_fuckthis = yes
+# 				enable_special_project = {
+# 					name = primitives_observe_iron_age_2
+# 					location = capital_scope
+# 					owner = root
+# 				}
+# 			}
+# 			late_medieval_age = {
+# 				fp_fuckthis = yes
+# 				enable_special_project = {
+# 					name = primitives_observe_late_medieval_age_2
+# 					location = capital_scope
+# 					owner = root
+# 				}
+# 			}
+# 			renaissance_age = {
+# 				fp_fuckthis = yes
+# 				enable_special_project = {
+# 					name = primitives_observe_renaissance_age_2
+# 					location = capital_scope
+# 					owner = root
+# 				}
+# 			}
+# 			steam_age = {
+# 				fp_fuckthis = yes
+# 				enable_special_project = {
+# 					name = primitives_observe_steam_age_2
+# 					location = capital_scope
+# 					owner = root
+# 				}
+# 			}
+# 		}
+# 	}
+# 	if = {
+# 		limit = {
+# 			NOT = {
+# 				has_country_flag = "humans_machine_age"
+# 				has_country_flag = "humans_early_space_age"
+# 			}
+# 		}
+# 		switch = {
+# 			trigger = has_country_flag
+# 			industrial_age = {
+# 				fp_fuckthis = yes
+# 				enable_special_project = {
+# 					name = primitives_observe_industrial_age_2
+# 					location = capital_scope
+# 					owner = root
+# 				}
+# 			}
+# 			machine_age = {
+# 				fp_fuckthis = yes
+# 				enable_special_project = {
+# 					name = primitives_observe_machine_age_2
+# 					location = capital_scope
+# 					owner = root
+# 				}
+# 			}
+# 			atomic_age = {
+# 				fp_fuckthis = yes
+# 				enable_special_project = {
+# 					name = primitives_observe_atomic_age_2
+# 					location = capital_scope
+# 					owner = root
+# 				}
+# 			}
+# 			early_space_age = {
+# 				fp_fuckthis = yes
+# 				enable_special_project = {
+# 					name = primitives_observe_early_space_age_2
+# 					location = capital_scope
+# 					owner = root
+# 				}
+# 			}
+# 		}
+# 	}
+# }
