@@ -88,25 +88,25 @@ fp_setprojectflags = {
 		who = fromfrom.owner
 		flag = has_frp_project_v1
 	}
-	fromfrom.owner = {
-		set_country_flag = "folk_primitives_project"
-	}
+	#fromfrom.owner = {
+	#	set_country_flag = "folk_primitives_project"
+	#}
 }
 
 # root is the planet
 # scope is the player country
 # XXX we have a copy of this in fp_registry
-fp_decreasecount = {
+#fp_decreasecount = {
 	#fp_ensurecount = yes
 	# Remove primitive flag
-	root.owner = {
-		remove_country_flag = "folk_primitives_project"
-	}
+	#root.owner = {
+	#	remove_country_flag = "folk_primitives_project"
+	#}
 	# subtract_variable = {
 	# 	which = "FolkPrimitivesCount"
 	# 	value = 1
 	# }
-}
+#}
 
 # fp_startchain = {
 # 	if = {

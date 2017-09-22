@@ -302,49 +302,45 @@ planet_event = {
 		}
 	}
 	immediate = {
-		owner = {
-			set_country_flag = "folk_primitives_researched"
-		}
+		#owner = {
+		#	set_country_flag = "folk_primitives_researched"
+		#}
 		every_country = {
 			limit = {
 				is_country_type = "default"
 				is_ai = no
+				has_relation_flag = {
+					who = root.owner
+					flag = has_frp_project_v1
+				}
 			}
 			#fp_cancel_all_types = yes
-			fp_decreasecount = yes
+			#fp_decreasecount = yes
 
 			# if = {
 			# 	limit = { NOT = { fp_hasanyproject = yes } }
 			# 	end_event_chain = "folkprimitives_chain"
 			# }
+			remove_relation_flag = {
+				who = root.owner
+				flag = has_frp_project_v1
+			}
 			if = {
 				limit = {
-					has_relation_flag = {
-						who = root.owner
-						flag = has_frp_project_v1
+					NOT = {
+						has_country_flag = "frp_never_any_reward"
 					}
 				}
-				remove_relation_flag = {
-					who = root.owner
-					flag = has_frp_project_v1
-				}
-				if = {
-					limit = {
-						NOT = {
-							has_country_flag = "frp_never_any_reward"
-						}
-					}
-					random_list = {
-						10 = { country_event = { id = frp_rewards.300 } }
-						10 = { country_event = { id = frp_rewards.301 } }
-						10 = { country_event = { id = frp_rewards.302 } }
-						10 = { country_event = { id = frp_rewards.200 } }
-						10 = { country_event = { id = frp_rewards.201 } }
-						10 = { country_event = { id = frp_rewards.202 } }
-						10 = { country_event = { id = frp_rewards.100 } }
-						10 = { country_event = { id = frp_rewards.102 } }
-						10 = { country_event = { id = frp_rewards.103 } }
-					}
+				random_list = {
+					10 = { country_event = { id = frp_rewards.300 } }
+					10 = { country_event = { id = frp_rewards.301 } }
+					10 = { country_event = { id = frp_rewards.302 } }
+					10 = { country_event = { id = frp_rewards.200 } }
+					10 = { country_event = { id = frp_rewards.201 } }
+					10 = { country_event = { id = frp_rewards.202 } }
+					10 = { country_event = { id = frp_rewards.100 } }
+					10 = { country_event = { id = frp_rewards.102 } }
+					10 = { country_event = { id = frp_rewards.103 } }
 				}
 			}
 		}

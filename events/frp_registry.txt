@@ -153,9 +153,11 @@ planet_event = {
 	is_triggered_only = yes
 	trigger = {
 		exists = from
-		from = {
-			has_country_flag = "folk_primitives_project"
-		}
+		#from = {
+		#	has_country_flag = "folk_primitives_project"
+		#}
+		# Dont check if FROM is a primitive country, just
+		# cancel all projects, if any, regardless.
 	}
 
 	immediate = {
@@ -171,12 +173,12 @@ planet_event = {
 
 			# XXX basically a copy of fp_decreasecount = yes
 			#fp_ensurecount = yes
-			from = {
+			#from = {
 				# if = {
 				# 	limit = {
 				# 		has_country_flag = "folk_primitives_project"
 				# 	}
-					remove_country_flag = "folk_primitives_project"
+					#remove_country_flag = "folk_primitives_project"
 					# prev = {
 					# 	subtract_variable = {
 					# 		which = "FolkPrimitivesCount"
@@ -184,7 +186,7 @@ planet_event = {
 					# 	}
 					# }
 				#}
-			}
+			#}
 			# if = {
 			# 	limit = { NOT = { fp_hasanyproject = yes } }
 			# 	end_event_chain = "folkprimitives_chain"
@@ -200,7 +202,7 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
-		is_country_type = "primitive"
+		#is_country_type = "primitive"
 		exists = capital_scope
 	}
 
@@ -218,12 +220,12 @@ country_event = {
 
 				# XXX basically a copy of fp_decreasecount = yes
 				#fp_ensurecount = yes
-				root = {
+				#root = {
 					# if = {
 					# 	limit = {
 					# 		has_country_flag = "folk_primitives_project"
 					# 	}
-						remove_country_flag = "folk_primitives_project"
+						#remove_country_flag = "folk_primitives_project"
 						# prev = {
 						# 	subtract_variable = {
 						# 		which = "FolkPrimitivesCount"
@@ -231,7 +233,7 @@ country_event = {
 						# 	}
 						# }
 					#}
-				}
+				#}
 				# if = {
 				# 	limit = { NOT = { fp_hasanyproject = yes } }
 				# 	end_event_chain = "folkprimitives_chain"
@@ -259,7 +261,7 @@ planet_event = {
 			# Prev needs to be planet, and must be ran from player country scope
 			fp_cancel_all_types = yes
 
-			fp_decreasecount = yes
+			#fp_decreasecount = yes
 
 			# XXX basically a copy of fp_decreasecount = yes
 			#fp_ensurecount = yes
