@@ -1,15 +1,4 @@
 
-# fromfrom is the planet
-# from is the primitive civ
-# scope is the player country
-fp_setprojectflags = {
-	set_relation_flag = {
-		who = fromfrom.owner
-		flag = has_frp_project_v1
-	}
-}
-
-
 # This needs to be done in country scope
 # And prev needs to be the planet, obviously
 fp_cancel_all_types = {

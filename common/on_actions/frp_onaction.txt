@@ -7,22 +7,8 @@ on_survey = {
 	}
 }
 
-on_planet_ownerless = {
+on_game_start_country = {
 	events = {
-		fp_registry.200
-	}
-}
-
-on_country_destroyed = {
-	events = {
-		fp_registry.300
-	}
-}
-
-# A colony has been destroyed. Called just before owner and controller is cleared
-# Scope = Planet
-on_colony_destroyed = {
-	events = {
-		fp_registry.400
+		fp_registry.10
 	}
 }

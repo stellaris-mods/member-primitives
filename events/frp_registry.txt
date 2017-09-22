@@ -1,34 +1,27 @@
 namespace = fp_registry
 
-# CREATE REGISTRY
 country_event = {
-	id = fp_registry.9001 # IT IS OVER 9000!
+	id = fp_registry.10
 	hide_window = yes
+	is_triggered_only = yes
 
-	# Apparently this means it will only trigger once, per game, across savegames
-	fire_only_once = yes
-
-	mean_time_to_happen = {
-		days = 2
+	trigger = {
+		is_country_type = primitive
 	}
 
 	immediate = {
-		every_country = {
-			limit = {
-				is_country_type = "primitive"
-				NOT = { has_country_flag = "fp_was_ever_primitive" }
-			}
-			set_country_flag = "fp_was_ever_primitive"
+		set_country_flag = "fp_was_ever_primitive"
+		capital_scope = {
+			set_planet_flag = "fp_primitive_planet"
 		}
 	}
 }
 
-# This event runs on every country_event, for the whole game.
 country_event = {
 	id = fp_registry.1
 	hide_window = yes
 	trigger = {
-		is_country_type = "default"
+		NOT = { is_country_type = "primitive" }
 		has_country_flag = "fp_was_ever_primitive"
 	}
 	immediate = {
@@ -48,66 +41,22 @@ country_event = {
 }
 
 planet_event = {
-	id = fp_registry.200
+	id = fp_registry.2
 	hide_window = yes
-	is_triggered_only = yes
 	trigger = {
-		exists = from
-		# Dont check if FROM is a primitive country, just
-		# cancel all projects, if any, regardless.
+		has_planet_flag = "fp_primitive_planet"
+		NOR = {
+			exists = owner
+			owner = { is_country_type = "primitive" }
+		}
 	}
-
 	immediate = {
+		remove_planet_flag = "fp_primitive_planet"
 		every_country = {
 			limit = {
 				is_country_type = "default"
 				is_ai = no
 			}
-			# We are in the player country scope
-			# Prev needs to be planet, and must be ran from player country scope
-			fp_cancel_all_types = yes
-		}
-	}
-}
-
-#on_country_destroyed
-country_event = {
-	id = fp_registry.300
-	is_triggered_only = yes
-	hide_window = yes
-
-	trigger = {
-		exists = capital_scope
-	}
-
-	immediate = {
-		capital_scope = {
-			every_country = {
-				limit = {
-					is_country_type = "default"
-					is_ai = no
-				}
-				# We are in the player country scope
-				# Prev needs to be planet, and must be ran from player country scope
-				fp_cancel_all_types = yes
-			}
-		}
-	}
-}
-
-#on_colony_destroyed
-planet_event = {
-	id = fp_registry.400
-	is_triggered_only = yes
-	hide_window = yes
-
-	immediate = {
-		every_country = {
-			limit = {
-				is_country_type = "default"
-				is_ai = no
-			}
-			# We are in the player country scope
 			# Prev needs to be planet, and must be ran from player country scope
 			fp_cancel_all_types = yes
 		}
