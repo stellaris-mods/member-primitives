@@ -22,43 +22,6 @@ country_event = {
 		}
 	}
 }
-# country_event = {
-# 	id = fp_registry.9002
-# 	hide_window = yes
-# 	fire_only_once = yes
-# 	mean_time_to_happen = {
-# 		days = 1
-# 	}
-# 	immediate = {
-# 		every_country = {
-# 			limit = {
-# 				check_variable = {
-# 					which = FolkPrimitivesCount
-# 					value < 1
-# 				}
-# 			}
-# 			set_variable = {
-# 				which = FolkPrimitivesCount
-# 				value = 0
-# 			}
-# 		}
-# 	}
-# }
-
-# event = {
-# 	id = fp_registry.900
-# 	hide_window = yes
-# 	is_triggered_only = yes
-
-# 	immediate = {
-# 		every_country = {
-# 			set_variable = {
-# 				which = FolkPrimitivesCount
-# 				value = 0
-# 			}
-# 		}
-# 	}
-# }
 
 # This event runs on every country_event, for the whole game.
 country_event = {
@@ -84,78 +47,12 @@ country_event = {
 	}
 }
 
-
-
-# Root = Planet being bombarded for a day.
-# From = Fleet performing the delicate bombardment.
-#Executed on daily bombardment
-# planet_event = {
-# 	id = fp_registry.100
-# 	hide_window = yes
-# 	is_triggered_only = yes
-# 	trigger = {
-# 		exists = owner
-# 		owner = {
-# 			has_country_flag = "folk_primitives_project"
-# 		}
-# 		exists = from
-# 		FROM = {
-# 			owner = {
-# 				OR = {
-# 					is_country_type = extradimensional
-# 					is_country_type = extradimensional_2
-# 					is_country_type = extradimensional_3
-# 				}
-# 			}
-# 		}
-# 	}
-
-# 	immediate = {
-# 		every_country = {
-# 			limit = {
-# 				is_country_type = "default"
-# 				is_ai = no
-# 			}
-# 			# We are in the player country scope
-
-# 			# Prev needs to be planet, and must be ran from player country scope
-# 			fp_cancel_all_types = yes
-
-# 			fp_decreasecount = yes
-
-# 			# XXX basically a copy of fp_decreasecount = yes
-# 			#fp_ensurecount = yes
-# 			#root.owner = {
-# 				# if = {
-# 				# 	limit = {
-# 				# 		has_country_flag = "folk_primitives_project"
-# 				# 	}
-# 					#remove_country_flag = "folk_primitives_project"
-# 					# prev = {
-# 					# 	subtract_variable = {
-# 					# 		which = "FolkPrimitivesCount"
-# 					# 		value = 1
-# 					# 	}
-# 					# }
-# 				#}
-# 			#}
-# 			# if = {
-# 			# 	limit = { NOT = { fp_hasanyproject = yes } }
-# 			# 	end_event_chain = "folkprimitives_chain"
-# 			# }
-# 		}
-# 	}
-# }
-
 planet_event = {
 	id = fp_registry.200
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
 		exists = from
-		#from = {
-		#	has_country_flag = "folk_primitives_project"
-		#}
 		# Dont check if FROM is a primitive country, just
 		# cancel all projects, if any, regardless.
 	}
@@ -167,30 +64,8 @@ planet_event = {
 				is_ai = no
 			}
 			# We are in the player country scope
-
 			# Prev needs to be planet, and must be ran from player country scope
 			fp_cancel_all_types = yes
-
-			# XXX basically a copy of fp_decreasecount = yes
-			#fp_ensurecount = yes
-			#from = {
-				# if = {
-				# 	limit = {
-				# 		has_country_flag = "folk_primitives_project"
-				# 	}
-					#remove_country_flag = "folk_primitives_project"
-					# prev = {
-					# 	subtract_variable = {
-					# 		which = "FolkPrimitivesCount"
-					# 		value = 1
-					# 	}
-					# }
-				#}
-			#}
-			# if = {
-			# 	limit = { NOT = { fp_hasanyproject = yes } }
-			# 	end_event_chain = "folkprimitives_chain"
-			# }
 		}
 	}
 }
@@ -202,7 +77,6 @@ country_event = {
 	hide_window = yes
 
 	trigger = {
-		#is_country_type = "primitive"
 		exists = capital_scope
 	}
 
@@ -214,37 +88,14 @@ country_event = {
 					is_ai = no
 				}
 				# We are in the player country scope
-
 				# Prev needs to be planet, and must be ran from player country scope
 				fp_cancel_all_types = yes
-
-				# XXX basically a copy of fp_decreasecount = yes
-				#fp_ensurecount = yes
-				#root = {
-					# if = {
-					# 	limit = {
-					# 		has_country_flag = "folk_primitives_project"
-					# 	}
-						#remove_country_flag = "folk_primitives_project"
-						# prev = {
-						# 	subtract_variable = {
-						# 		which = "FolkPrimitivesCount"
-						# 		value = 1
-						# 	}
-						# }
-					#}
-				#}
-				# if = {
-				# 	limit = { NOT = { fp_hasanyproject = yes } }
-				# 	end_event_chain = "folkprimitives_chain"
-				# }
 			}
 		}
 	}
 }
 
 #on_colony_destroyed
-# WORKS
 planet_event = {
 	id = fp_registry.400
 	is_triggered_only = yes
@@ -257,32 +108,8 @@ planet_event = {
 				is_ai = no
 			}
 			# We are in the player country scope
-
 			# Prev needs to be planet, and must be ran from player country scope
 			fp_cancel_all_types = yes
-
-			#fp_decreasecount = yes
-
-			# XXX basically a copy of fp_decreasecount = yes
-			#fp_ensurecount = yes
-			#root.owner = {
-				# if = {
-				# 	limit = {
-				# 		has_country_flag = "folk_primitives_project"
-				# 	}
-					#remove_country_flag = "folk_primitives_project"
-					# prev = {
-					# 	subtract_variable = {
-					# 		which = "FolkPrimitivesCount"
-					# 		value = 1
-					# 	}
-					# }
-				#}
-			#}
-			# if = {
-			# 	limit = { NOT = { fp_hasanyproject = yes } }
-			# 	end_event_chain = "folkprimitives_chain"
-			# }
 		}
 	}
 }

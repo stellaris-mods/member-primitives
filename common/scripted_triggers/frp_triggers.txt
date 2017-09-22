@@ -13,13 +13,3 @@ fp_hasanyproject = {
 		has_special_project = primitives_observe_early_space_age_2
 	}
 }
-
-# In country scope always
-# Note that you need to do #fp_ensurecount = yes in effect
-# before checking this trigger.
-# fp_toomany = {
-# 	check_variable = {
-# 		which = "FolkPrimitivesCount"
-# 		value > 19
-# 	}
-# }

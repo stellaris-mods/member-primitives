@@ -10,9 +10,6 @@ fptest.var: "[Root.FolkPrimitivesCount] projects exist"
 # This will error in error.log
 SPECIAL_PROJECT_STATUS_AVAILABLE: ""
 
-folkprimitives_chain_title: "Member primitives?"
-folkprimitives_chain_desc: "§MThank you for using my mods!§!\n\nWhenever you research a project in the list, you get to pick between a random reward and no reward. AI empires do not get these projects at all.\n\nPlease consult the Steam workshop page for more information on the various rewards and other details. I §Wwelcome any feedback or questions§! regarding this, or any of my other mods. Thank you!\n\n§GMember primitives? Ooooh, I member!§!\n\n§PPlease be aware of a Stellaris bug where if you have more than 20+ projects under a category, it will break. The mod tries to prevent this.§!"
-
 primitives.toomany.title: "Too many active projects"
 primitives.toomany.desc: "Unfortunately, due to a §Pbug in Stellaris§!, it is impossible to create more than 20 projects under a category in the Situation Log without serious problems.\n\nWhich means that §Mno project has been created§! for the civilization you just discovered.\n\nAnd, unfortunately, because this situation is hopefully quite rare, you will get this warning popup any time you have 20 Member-projects §Gactive§! in the Situation Log and discover a new primitive civilization.\n\nIf this is very inconvenient, please let me know on the Steam workshop page and I can spend the effort to work around this problem."
 primitives.toomany.button: "I don't hate you for this"

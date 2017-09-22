@@ -1,121 +1,6 @@
 
-# can I just set #event_chain = folkprimitives_chain and it will pop up in its own submenu?
-# - YES I CAN, MR NABIS
-# vanilla does this on country_event scope
-#begin_event_chain = {
-#	#event_chain = folkprimitives_chain
-#	target = root
-#}
-# and then immediately
-#enable_special_project = {
-#	name = "ENIGMATIC_FORTRESS_1A"
-#	location = this
-#	owner = ROOT
-#}
-# where ENIGMATIC_FORTRESS_1A is a special_project
-# with event_chain = "enigmatic_fortress_chain"
-#
-# this seems to be for when you can only pick one of two:
-# same_option_group_as = { ENIGMATIC_FORTRESS_1A }
-#abort_trigger = {
-#	OR = {
-#		NOT = { exists = FROMFROM }
-#		has_communications = FROMFROM
-#	}
-#}
-## XXX OKAY FUCK THIS SHIP WITH ABORT_TRIGGER,
-## how the hell is it supposed to work anyway?!
-## the stupid project never goes away when that trigger
-## is true so wtf lulz
-#ESTABLISH_COMMUNICATIONS
-#event_scope = planet_event
-#abort_trigger = {
-#	OR = {
-#		NOT = { exists = FROMFROM }
-#		has_communications = FROMFROM
-#	}
-#}
-#MANUFACTORY_PROJECT
-#event_scope = ship_event
-#abort_trigger = {
-#	NOT = {
-#		fromfrom = {
-#			solar_system = {
-#				has_access_fleet = root
-#			}
-#		}
-#	}
-#}
-#INVESTIGATE_ENCLAVE
-#event_scope = planet_event
-#abort_trigger = {
-#	OR = {
-#		NOT = { exists = FROMFROM }
-#		has_communications = FROMFROM
-#	}
-#}
-# [Root.GetName]	[This.GetName]	[From.GetName]	[From.From.GetName]	[Prev.GetName]	[Prev.From.GetName]
-#  Skog			skog			ship			planet				skog			ship
-
-# primitive_civ = country on planet
-# root = player country
-# from = science ship
-# fromfrom = project creation scope, that means country_event, and it means player
-#
-#	abort_trigger
-#	this = country (project owner)
-#	from = event scope (planet or ship, MIGHT NOT EXIST)
-#	fromfrom = project creation scope (usually equals location)
-#
-# We need to abort just when a observation station appears
-# there is no way to make it "researchable" that I can find.
-# abort_trigger = {
-#	or = {
-#		# Planet doesn't exist
-#		not = { exists = fromfrom } # XXX science ship? debug by killing
-#		# Observation post exists
-#		fromfrom = { #fromfrom is apparently a country, maybe from is planet, or science ship
-#			has_observation_outpost = yes
-#		}
-#		# Owner is not a primitive civ, so either
-#		# it got colonized, or they ascended to full space age?
-#		not = {
-#			fromfrom = { # XXX Is this planet civ or player?
-#				owner = {
-#					is_country_type = primitive
-#				}
-#			}
-#		}
-#		# We do not have access to the system any more
-#		not = {
-#			fromfrom = { # XXX Is this planet or science ship?
-#				solar_system = {
-#					has_access_fleet = root
-#				}
-#			}
-#		}
-#		# XXX Check borders not just access for fleets
-#	}
-#}
-# XXX FUCK EVERYTHING ABOVE, JEEZ PARADOX PLZ HLEP
-
-# maybe make own icon from
-# planet + society + scanning beam
-#icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
-
-# abort_trigger and on_fail
-# Since this is a planet_event and a primitive civ
-# technically owns the planet, the |owner| scope scopes to them.
-# |this| scope is project owner
-
-# on_success:
-# |this| = event scope, so planet or ship and the ship maybe dead, so gg we use planet
-# root = planet
-# fromfrom = science ship
-# owner = primitive civ country
 special_project = {
 	key = "primitives_observe_bronze_age_2"
-	#event_chain = folkprimitives_chain
 	cost = 0
 	tech_department = society_technology
 	days_to_research = 14
@@ -137,7 +22,6 @@ special_project = {
 
 special_project = {
 	key = "primitives_observe_iron_age_2"
-	#event_chain = folkprimitives_chain
 	cost = 0
 	tech_department = society_technology
 	days_to_research = 14
@@ -157,7 +41,6 @@ special_project = {
 
 special_project = {
 	key = "primitives_observe_late_medieval_age_2"
-	#event_chain = folkprimitives_chain
 	cost = 0
 	tech_department = society_technology
 	days_to_research = 14
@@ -177,7 +60,6 @@ special_project = {
 
 special_project = {
 	key = "primitives_observe_renaissance_age_2"
-	#event_chain = folkprimitives_chain
 	cost = 0
 	tech_department = society_technology
 	days_to_research = 14
@@ -197,7 +79,6 @@ special_project = {
 
 special_project = {
 	key = "primitives_observe_steam_age_2"
-	#event_chain = folkprimitives_chain
 	cost = 0
 	tech_department = society_technology
 	days_to_research = 14
@@ -217,7 +98,6 @@ special_project = {
 
 special_project = {
 	key = "primitives_observe_industrial_age_2"
-	#event_chain = folkprimitives_chain
 	cost = 0
 	tech_department = society_technology
 	days_to_research = 14
@@ -237,7 +117,6 @@ special_project = {
 
 special_project = {
 	key = "primitives_observe_machine_age_2"
-	#event_chain = folkprimitives_chain
 	cost = 0
 	tech_department = society_technology
 	days_to_research = 14
@@ -257,7 +136,6 @@ special_project = {
 
 special_project = {
 	key = "primitives_observe_atomic_age_2"
-	#event_chain = folkprimitives_chain
 	cost = 0
 	tech_department = society_technology
 	days_to_research = 14
@@ -277,7 +155,6 @@ special_project = {
 
 special_project = {
 	key = "primitives_observe_early_space_age_2"
-	#event_chain = folkprimitives_chain
 	cost = 0
 	tech_department = society_technology
 	days_to_research = 14
