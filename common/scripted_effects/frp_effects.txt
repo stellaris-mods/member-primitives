@@ -3,6 +3,10 @@
 # And prev needs to be the planet, obviously
 fp_cancel_all_types = {
 	abort_special_project = {
+		type = primitives_observe_stone_age_2
+		location = prev
+	}
+	abort_special_project = {
 		type = primitives_observe_bronze_age_2
 		location = prev
 	}

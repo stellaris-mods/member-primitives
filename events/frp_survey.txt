@@ -31,6 +31,10 @@ ship_event = {
 					}
 					switch = {
 						trigger = has_country_flag
+						stone_age = {
+							root.owner = { country_event = { id = fp_survey.11 } }
+							break = yes
+						}
 						bronze_age = {
 							root.owner = { country_event = { id = fp_survey.2 } }
 							break = yes
@@ -52,7 +56,7 @@ ship_event = {
 							break = yes
 						}
 					}
-				}
+				} # need to else-if before I remove breaks
 				if = {
 					limit = {
 						NOT = {
@@ -198,6 +202,19 @@ country_event = {
 	immediate = {
 		enable_special_project = {
 			name = primitives_observe_early_space_age_2
+			location = fromfrom
+			owner = root
+		}
+	}
+}
+
+country_event = {
+	id = fp_survey.11 # Stone Age
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		enable_special_project = {
+			name = primitives_observe_stone_age_2
 			location = fromfrom
 			owner = root
 		}

@@ -162,3 +162,21 @@ special_project = {
 	}
 	on_fail = {}
 }
+
+special_project = {
+	key = "primitives_observe_stone_age_2"
+	cost = 0
+	tech_department = society_technology
+	days_to_research = 14
+	timelimit = -1
+	picture = GFX_evt_folkprimitives_base # XXX needs new picture
+	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
+	event_scope = planet_event
+	requirements = {
+	}
+	abort_trigger = {}
+	on_success = {
+		planet_event = { id = frp_rewards.1000 }
+	}
+	on_fail = {}
+}

@@ -54,6 +54,8 @@ primitives_observe_renaissance_age_2: "$primitives_prefix$§Y[primitive_civ.GetS
 primitives_observe_renaissance_age_2_DESC: "$action.5.desc_04$$primitives_reward$"
 primitives_observe_steam_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
 primitives_observe_steam_age_2_DESC: "$action.5.desc_05$$primitives_reward$"
+primitives_observe_stone_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
+primitives_observe_stone_age_2_DESC: "$action.5.desc_05$$primitives_reward$"
 
 primitives_observe_industrial_age_2: "$primitives_prefix$§Y[primitive_civ.GetSpeciesNamePlural]§!$primitives_postfix$"
 primitives_observe_industrial_age_2_DESC: "$action.6.desc_01$$primitives_reward$"
