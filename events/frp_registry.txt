@@ -45,9 +45,9 @@ planet_event = {
 	hide_window = yes
 	trigger = {
 		has_planet_flag = "fp_primitive_planet"
-		NOR = {
-			exists = owner
-			owner = { is_country_type = "primitive" }
+		OR = {
+			NOT = { exists = owner }
+			NOT = { owner = { is_country_type = "primitive" } }
 		}
 	}
 	immediate = {
